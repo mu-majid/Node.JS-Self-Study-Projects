@@ -5,6 +5,4 @@
   
 ## Usage of Projects
   1- Change directory to a specific project.<br/>
-  2- open up a terminal.<br/>
-  3- Run the following Command.<br/>
-     >> npm start.<br/>
+  2- Read the readme text file in each directory.

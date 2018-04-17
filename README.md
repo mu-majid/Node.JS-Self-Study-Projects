@@ -4,7 +4,7 @@
   Node.JS installed.
   
 ## Usage of Projects
-  1- Change directory to a specific project.__
+  1- Change directory to a specific project<br/>
   2- open up a terminal.__
   3- Run the following Command.__
      >> npm start.__

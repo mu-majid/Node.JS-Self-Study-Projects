@@ -1,0 +1,15 @@
+extends ../layout.pug
+
+block content
+    form(action="contact/send", method="post")
+        h1 #{title}
+        .form-group
+            laebl name
+            input.form-control(type="text", name="name")
+        .form-group
+            laebl Email
+            input.form-control(type="email", name="email")
+        .form-group
+            laebl Message
+            textarea.form-control(cols="30", rows="10", name="message")
+        button.btn.btn-default(type="submit") Submit

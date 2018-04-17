@@ -1,0 +1,25 @@
+doctype html
+html(lang='en')
+  head
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+  body
+    nav.navbar.navbar-expand-md.navbar-dark.bg-dark
+      a.navbar-brand(href='#') PC Repair
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarsExampleDefault.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item(class=title=='Home' ? 'active' : undefined)
+            a.nav-link(href='/home')
+              | Home 
+          li.nav-item(class=title=='About' ? 'active' : undefined)
+            a.nav-link(href='/about') About
+          li.nav-item(class=title=='Services' ? 'active' : undefined)
+            a.nav-link(href='/services') Services
+          li.nav-item(class=title=='Contact' ? 'active' : undefined)
+            a.nav-link(href='/contact') Contact
+        form.form-inline.my-2.my-lg-0
+          input.form-control.mr-sm-2(type='text', placeholder='Search', aria-label='Search')
+          button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+  .container
+    block content

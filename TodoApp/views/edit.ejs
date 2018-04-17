@@ -1,0 +1,18 @@
+
+
+<% include header.ejs %>
+    <div class="container">
+    <form id="todo-form" method="post" action="/todo/edit/<%= todo._id %>" >
+        <div class="form-group">
+            <label> Name </label>
+            <input id="add-input" type="text" name="tskName" value="<%= todo.name %>">
+        </div>
+        <br>
+        <div class="form-group">
+            <textarea id="add-input" type="text" name="tskBody"><%= todo.body %> </textarea>
+        </div>
+        <button id="add-button" class="btn btn-warning" type="submit">Edit</button>
+        <a href="/todo"> Cancel </a>
+    </form>
+    </div>
+<% include footer.ejs %>

@@ -1,0 +1,32 @@
+<% include header.ejs %>
+		<main id="app">
+			<header>
+				<h1>todo app</h1>
+			</header>
+			
+			<ul id="todo-list">
+                <% todos.forEach((todo)=>{ %>
+                    <li class="todo-item">
+                        <label class="title"><%= todo.name %> </label>
+                        <label class="title"><%= todo.body %> </label>
+                        <a href="/todo/edit/<%= todo._id %>" class="edit">Edit</a>
+                        <a data-id="<%= todo._id %>" href="#" class="delete">Delete</a>
+                    </li>
+                <% }) %>
+			</ul>
+			
+			<form id="todo-form" method="post" action="/todo/add" >
+                <div class="form-group">
+                    <label> Name </label>
+				    <input class="form-control" id="add-input" type="text" name="tskName">
+                </div>
+                <br>
+                <div class="form-group">
+                    <textarea class="form-control" id="add-input" type="text" name="tskBody"></textarea>
+                </div>
+                <br>
+                <button id="add-button" class="btn btn-warning" type="submit">Add Task</button>
+			</form>
+
+		</main>
+<% include footer.ejs %>

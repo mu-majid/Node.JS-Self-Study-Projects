@@ -1,0 +1,43 @@
+.custom-btn{
+    margin-top: 11px;
+}
+#messages {
+    
+    margin: 10px;
+}
+
+#messages  ul{
+    padding: 0;
+    margin: 0;
+}
+
+#messages li {
+    list-style: none;
+    padding: 10px;
+}
+
+#messages .success{
+    background: green;
+    color: #fff
+}
+
+#messages .error{
+    background: red;
+    color: #fff
+}
+
+.showcase {
+    background: url('/img/home-bg.jpg') no-repeat 0 -150px;
+    min-height: 400px;
+    color: white;
+}
+
+.navbar{
+    margin-bottom:0;
+    border-radius:0;
+  }
+
+.paddhere{
+    margin-top: 80px;
+    
+}

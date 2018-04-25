@@ -1,0 +1,29 @@
+extends ../layout/layout.pug
+
+block content
+    .container
+        h1 #{title}
+        ul.errors
+            if errors
+                each error, i in errors
+                    li.alert.alert-danger #{error.msg}
+        form(action="/articles/add", method="post")
+            .form-group
+                label(for="title") Title: 
+                input.form-control(type="text", name="title")
+            .form-group
+                label(for="subt") Subtitle: 
+                input.form-control(type="text", name="subtitle")
+            .form-group
+                label(for="cat") Category: 
+                select.form-control( name="category")
+                    each category, i in categories
+                        option(value=category._id) #{category.title}
+            .form-group
+                label(for="author") Author: 
+                input.form-control(type="text", name="author")
+            .form-group
+                label(for="body") Body: 
+                textarea.form-control(name="body", cols="30", rows="5")
+            input.btn.btn-primary(type="submit", name="submit", value="Save") 
+            a.btn.btn-danger(href="/manage/articles") Back 

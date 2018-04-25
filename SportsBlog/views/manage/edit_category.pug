@@ -1,0 +1,19 @@
+extends ../layout/layout.pug
+
+block content
+    .container
+        h1 #{title}
+        ul.errors
+            if errors
+                each error, i in errors
+                    li.alert.alert-danger #{error.msg}
+        form(action='/categories/edit/'+category._id, method="post")
+            .form-group
+                label(for="title") Title :
+                input.form-control(type="text", name="title" value=category.title)
+            .form-group
+                label(for="desc") Description :
+                textarea.form-control(name="desc") #{category.description}
+            input.btn.btn-success(type="submit", value="Save") 
+            a.btn.btn-info(href="/manage/categories") Cancel 
+            a.btn.btn-danger.category-delete.float-right(href="/manage/categories", data-cat-id=category._id) Delete

@@ -1,0 +1,33 @@
+extends ../layout/layout.pug
+
+block content
+    .container
+        h1 #{title}
+        ul.errors
+            if errors
+                each error, i in errors
+                    li.alert.alert-danger #{error.msg}
+        form(action="/articles/edit/"+article._id, method="post")
+            .form-group
+                label(for="title") Title: 
+                input.form-control(type="text", name="title", value=article.title)
+            .form-group
+                label(for="subt") Subtitle: 
+                input.form-control(type="text", name="subtitle", value=article.subtitle)
+            .form-group
+                label(for="cat") Category: 
+                select.form-control( name="category")
+                    each category, i in categories
+                        if(category._id == article.category)
+                            option(value=category._id, selected) #{category.title}
+                        else
+                            option(value=category._id) #{category.title}
+            .form-group
+                label(for="author") Author: 
+                input.form-control(type="text", name="author", value=article.author)
+            .form-group
+                label(for="body") Body: 
+                textarea.form-control(name="body", cols="30", rows="10") #{article.body}
+            input.btn.btn-primary(type="submit", name="submit", value="Save") 
+            a.btn.btn-danger(href="/manage/articles") Back 
+            a.btn.btn-danger.article-delete.float-right(href="/manage/articles", data-artc-id=article._id) Delete

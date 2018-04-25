@@ -1,0 +1,23 @@
+extends ../layout/layout.pug
+
+block content
+    .jumbotron.showcase
+        .container
+            h1.display-3 Hello, EveryBody!
+            p
+                | A simple sports blog built with Node.JS and Express.JS with pug as the view       template engine.
+            //- p
+            //-     a.btn.btn-primary.btn-lg(href='#', role='button') Learn more &raquo;
+
+    .container
+        .row
+            .col-md-12
+                each article, i in articles
+                    h2 #{article.title}
+                    h4 #{article.subtitle}
+                    p
+                        | Posted By : #{article.author}
+                        | on: #{moment(article.created_at).format('MMMM Do YYYY, h:mm:ss')}
+                    p
+                        a.btn.btn-secondary(href='/articles/show'+article._id, role='button') View details &raquo;
+                    hr

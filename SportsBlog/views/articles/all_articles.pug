@@ -1,0 +1,16 @@
+extends ../layout/layout.pug
+
+block content
+    .container.paddhere
+        h1 #{title}
+        .row
+            .col-md-12
+                each article, i in articles
+                    h2 #{article.title}
+                    h4 #{article.subtitle}
+                    p
+                        | Posted By : #{article.author}
+                        | on: #{moment(article.created_at).format('MMMM Do YYYY, h:mm:ss')}
+                    p
+                        a.btn.btn-secondary(href='/articles/show/'+article._id, role='button') View details &raquo;
+                    hr

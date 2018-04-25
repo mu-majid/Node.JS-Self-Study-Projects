@@ -1,0 +1,9 @@
+extends ../layout/layout.pug
+
+block content
+    .container
+        h1 #{title}
+        ul.list-group
+            each category, i in categories
+                li.list-group-item
+                    a(href='/articles/category/'+category._id) #{category.title}

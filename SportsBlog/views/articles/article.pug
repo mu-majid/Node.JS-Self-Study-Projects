@@ -1,0 +1,39 @@
+extends ../layout/layout.pug
+
+block content
+    .container.paddhere
+        h2 #{title}
+        h4 #{article.subtitle}
+        p
+            | Posted By : #{article.author}
+            | on: #{moment(article.created_at).format('MMMM Do YYYY, h:mm:ss')}
+        p
+            | #{article.body}
+        hr
+        ul.errors
+            if errors
+                each error, i in errors
+                    li.alert.alert-danger #{error.msg}
+        h4 Add Comment
+        p
+            form.comment-form(method='post', action='/articles/comments/add/'+article._id)
+                .form-group
+                    label Subject
+                    input.form-control(type='text', name='comment_subject')
+                .form-group
+                    label Name
+                    input.form-control(type='text', name='comment_author')
+                .form-group
+                    label Email
+                    input.form-control(type='text', name='comment_email')
+                .form-group
+                    label Body
+                    textarea.form-control(name='comment_body')
+                input.btn.btn-default(name='submit', type='submit', value='Add Comment')
+        br
+        br
+        h4 Comments
+        each comment, i in article.comments
+            div.well
+                h5 Posted by #{comment.comment_author}
+                p #{comment.comment_body}

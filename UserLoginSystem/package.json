@@ -1,0 +1,26 @@
+{
+	"name": "userloginsystem",
+	"version": "1.0.0",
+	"description": "User Auth App",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "nodemon app"
+	},
+	"author": "Muhammad Majid",
+	"license": "ISC",
+	"dependencies": {
+		"express": "*",
+		"body-parser": "*",
+		"express-messages": "*",
+		"express-handlebars": "*",
+		"express-validator": "*",
+		"express-session": "*",
+		"connect-flash": "*",
+		"mongoose": "*",
+		"passport": "*",
+		"passport-http": "*",
+		"passport-local": "*",
+		"bcryptjs": "*"
+	}
+}
